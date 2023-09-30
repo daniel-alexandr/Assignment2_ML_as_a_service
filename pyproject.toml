@@ -11,7 +11,6 @@ python = "^3.9"
 pandas = "2.0.1"
 jupyterlab = "3.6.3"
 scikit-learn = "1.2.2"
-my_package = { path = "src/features/build_features.py" }
 
 [build-system]
 requires = ["poetry-core"]
