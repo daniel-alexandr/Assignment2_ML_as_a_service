@@ -59,10 +59,19 @@ class ImputeCategorical():
     """
     Function to impute values on categorical columns
     """
-    def __init__(self):
+    
+    def __init__(self,value_to_be_imputed='Unspecified'):
+        self.x= None
+
+        self.value=value_to_be_imputed
+    
+    def fit(self,x,y=None):
+        self.x=x
         
-    def fit (self,x,y=None):
         return self
     
-    def transform (self,df,cols_list_to_impute,value_to_input):
-        df[cols_list_to_impute].fillna(value_to_input, inplace=True)
+    def transform(self,x):
+        self.fit(x)
+        df_transformed = x.fillna(self.value)
+        return df_transformed
+        
